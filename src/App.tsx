@@ -21,6 +21,7 @@ export const App = () => {
     };
     const handleChangeSearch = debounce((e: ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value);
+      setPage(0);
     }, 400);
 
     const searchItems = names.filter(u => u.toLowerCase().indexOf(search.toLowerCase()) > -1);
