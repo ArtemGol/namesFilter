@@ -36,12 +36,22 @@ export const App = () => {
                 dataSource={pageItems}
                 renderItem={(item: any) => <List.Item>{item}</List.Item>}
             />
-            {Math.ceil(searchItems.length/10) > 1 &&
+            <PaginationBlock>
+                {Math.ceil(searchItems.length/10) > 1 &&
                 <Pagination defaultCurrent={1} total={Math.ceil(searchItems.length)} showSizeChanger={false} onChange={handleChangePage}/>}
+            </PaginationBlock>
         </Main>
     );
 }
 
 const Main = styled.div`
   padding: 10px;
+`;
+
+const PaginationBlock = styled.div`
+  @media screen and (max-width: 720px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
