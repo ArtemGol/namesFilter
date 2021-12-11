@@ -43,5 +43,5 @@ export const App = () => {
 }
 
 const Main = styled.div`
-  margin: 10px;
+  padding: 10px;
 `;
